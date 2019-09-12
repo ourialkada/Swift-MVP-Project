@@ -4,6 +4,7 @@ import UIKit
 
 class DetailScreenViewController: UIViewController,DetailScreenViewDelegate {
    
+   
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
@@ -32,6 +33,15 @@ class DetailScreenViewController: UIViewController,DetailScreenViewDelegate {
         self.image.image = product.image
         
     }
+    
+    func errorMessage(message: String) {
+        Spinner.stop()
+        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+        close((Any).self)
+    }
+    
     
     
     @IBAction func close(_ sender: Any) {

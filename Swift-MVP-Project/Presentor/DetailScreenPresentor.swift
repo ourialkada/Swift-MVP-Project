@@ -11,7 +11,7 @@ import Firebase
 
 protocol DetailScreenViewDelegate: NSObjectProtocol {
     func setData(product: detailedProduct)
-    
+    func errorMessage(message:String)
 }
 
 class DetailScreenPresentor {
@@ -49,5 +49,10 @@ class DetailScreenPresentor {
     {
       
         del.setData(product: product)
+    }
+    
+    func errorGettingData(error:String,del: DetailScreenViewDelegate)
+    {
+        del.errorMessage(message: error)
     }
 }

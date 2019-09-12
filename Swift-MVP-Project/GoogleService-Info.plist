@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1039147682085-1nld0d1dsmtp0jqbvcd138um8ahn3f0h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1039147682085-1nld0d1dsmtp0jqbvcd138um8ahn3f0h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA1UBqGTcHpPzTnQ_Cc_ZMLYDZrB3pPz6c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1039147682085</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>tomantech.Swift-MVP-Project</string>
+	<key>PROJECT_ID</key>
+	<string>jsos-apparel</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jsos-apparel.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1039147682085:ios:c7b5a4234410e109</string>
+	<key>DATABASE_URL</key>
+	<string>https://jsos-apparel.firebaseio.com</string>
+</dict>
+</plist>

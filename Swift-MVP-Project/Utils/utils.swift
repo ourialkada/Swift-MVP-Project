@@ -24,8 +24,9 @@ class utils {
                 // Handle error
                 return;
             }
-            
-            var  stringURL = "https://ouri-node-test.herokuapp.com/getCollection?type=" + type
+            print(idToken)
+           
+            var  stringURL = "https://ouri-node-test.herokuapp.com/getCollection?type=" + type + "&token=" + idToken!
             let url = URL(string: stringURL)
             var request = URLRequest(url: url!)
             request.httpMethod = HTTPMethod.get.rawValue
@@ -37,6 +38,8 @@ class utils {
                     
                     for element in arr as! [Dictionary<String, Any>]
                     {
+                       if element["status"]  == nil
+                       {
                         do
                         {
                             let url = NSURL(string: element["image"] as! String);
@@ -64,6 +67,14 @@ class utils {
                         {
                             
                         }
+                        }
+                       else
+                       {
+                        let d = DetailScreenPresentor()
+                       
+                        }
+                       
+                        
                     }
             }
             
@@ -82,7 +93,8 @@ class utils {
                 return;
             }
             
-            var  stringURL = "https://ouri-node-test.herokuapp.com/getDocument?type=" + type + "&id=" + id
+            var  stringURL = "https://ouri-node-test.herokuapp.com/getDocument?type=" + type
+            stringURL = stringURL + "&id=" + id + "&token=" + idToken!
             let url = URL(string: stringURL)
             var request = URLRequest(url: url!)
             request.httpMethod = HTTPMethod.get.rawValue
@@ -91,8 +103,13 @@ class utils {
                 .responseJSON { response in
 
                     if let JSON = response.result.value {
+                       
                         let json = JSON as! [String: Any]
+                        print("JSON",json["status"])
+                        if json["status"] == nil
+                        {
                         do {
+                             print(json,"wasasa")
                             let url = NSURL(string: json["image"] as! String);
                             var err: NSError?
                             let imageData :NSData =  try NSData(contentsOf: url! as URL,options: NSData.ReadingOptions.mappedIfSafe)
@@ -103,8 +120,15 @@ class utils {
                         }
                         catch
                         {
-                            
+                            print(json,"wasasa 2")
                         }
+                        }
+                        else
+                        {
+                            let d = DetailScreenPresentor()
+                            d.errorGettingData(error: json["status"] as! String,del: del)
+                        }
+                        
                         
                     }
             }
